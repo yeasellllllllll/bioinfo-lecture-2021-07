@@ -6,7 +6,7 @@ with open(f, "r") as handle:
     line_count = 0
     title = ""
     seq_list = []
-    origin_start = False  # origin_flag 스위치 on off 형태이다.
+    origin_start = False
     for line in handle.readlines():
         line = line.strip()
         if line == "":
@@ -19,6 +19,15 @@ with open(f, "r") as handle:
             seq_list.append(line)
         line_count += 1
 
-seq = "\n".join(seq_list)
 print(f"title: {title}")
-print(f"seq: {seq}")
+seq_str = " ".join(seq_list)
+seq_s = seq_str.replace(" ", "")
+seq_str = []
+for i in seq_s:
+    if i.isalpha() == True:
+        seq_str.append(i)
+    else:
+        pass
+
+s_sstr = "".join(seq_str)
+print(f"seq: {s_sstr}")

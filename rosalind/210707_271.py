@@ -285,66 +285,67 @@ p.display_info()
 # import random
 
 
-# class Account:
-#     all_account = 0
+class Account:
+    all_account = 0
 
-#     def __init__(self, name, balance):
+    def __init__(self, name, balance):
 
-#         self.deposit_count = 0
-#         self.deposit_log = []
-#         self.withdraw_log = []
+        self.deposit_count = 0
+        self.deposit_log = []
+        self.withdraw_log = []
 
-#         self.name = name
-#         self.balance = balance
-#         self.bank = "SC은행"
+        self.name = name
+        self.balance = balance
+        self.bank = "SC은행"
 
-#         num1 = random.randint(0, 999)
-#         num2 = random.randint(0, 99)
-#         num3 = random.randint(0, 999999)
+        num1 = random.randint(0, 999)
+        num2 = random.randint(0, 99)
+        num3 = random.randint(0, 999999)
 
-#         num1 = str(num1).zfill(3)
-#         num2 = str(num2).zfill(2)
-#         num3 = str(num3).zfill(6)
-#         self.account = num1 + "-" + num2 + "-" + num3
+        num1 = str(num1).zfill(3)
+        num2 = str(num2).zfill(2)
+        num3 = str(num3).zfill(6)
+        self.account = num1 + "-" + num2 + "-" + num3
 
-#         Account.all_account += 1
+        Account.all_account += 1
 
-#     def get_account_num(cls):  # class 매소드 (객체접근필요x)
-#         print(cls.all_account)  # cls = class
+    def get_account_num(cls):  # class 매소드 (객체접근필요x)
+        print(cls.all_account)  # cls = class
 
-#     def deposit(self, amount):
-#         if amount > 1:
-#             self.balance += amount
-#             self.deposit_log.append(amount)
-#             self.deposit_count += 1
-#             if self.deposit_count % 5 == 0:
-#                 self.balance = self.balance * 1.01
+    def deposit(self, amount):
+        if amount > 1:
+            self.balance += amount
+            self.deposit_log.append(amount)
+            self.deposit_count += 1
+            if self.deposit_count % 5 == 0:
+                self.balance = self.balance * 1.01
 
-#     def deposit_history(self):
-#         print(self.deposit_log)
+    def deposit_history(self):
+        print(self.deposit_log)
 
-#     def withdraw(self, amount):
-#         if amount <= self.balance:
-#             self.balance -= amount
-#             self.withdraw_log.append(amount)
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            self.withdraw_log.append(amount)
 
-#     def withdraw_history(self):
-#         print(self.withdraw_log)
+    def withdraw_history(self):
+        print(self.withdraw_log)
 
-#     def display_info(self):
-#         print(f"은행이름: {self.bank}")
-#         print(f"예금주: {self.name}")
-#         print(f"계좌번호: {self.account}")
-#         print(f"잔고: {self.balance}")
-#         print("잔고: ", format(self.balance, ","))
-#         # print("잔고: ", "{:,}".format(self.balance))
+    def display_info(self):
+        print(f"은행이름: {self.bank}")
+        print(f"예금주: {self.name}")
+        print(f"계좌번호: {self.account}")
+        print(f"잔고: {self.balance}")
+        print("잔고: ", format(self.balance, ","))
+        # print("잔고: ", "{:,}".format(self.balance))
 
-# k = Account("Kim", 1000)
-# k.deposit(100)
-# k.deposit(200)
-# k.deposit(300)
-# k.deposit_history()
 
-# k.withdraw(100)
-# k.withdraw(200)
-# k.withdraw_history()
+k = Account("Kim", 1000)
+k.deposit(100)
+k.deposit(200)
+k.deposit(300)
+k.deposit_history()
+
+k.withdraw(100)
+k.withdraw(200)
+k.withdraw_history()
